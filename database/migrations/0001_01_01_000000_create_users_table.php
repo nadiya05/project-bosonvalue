@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('email', 255)->unique();
 
             $table->string('password', 255);
+            $table->rememberToken();
             $table->string('password_hash', 255)->nullable();
             $table->string('password_salt', 255)->nullable();
             $table->integer('role_id')->nullable()->default(null);
