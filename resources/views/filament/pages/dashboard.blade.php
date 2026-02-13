@@ -1,86 +1,70 @@
 <x-filament::page>
 
-    <div class="max-w-7xl mx-auto px-6 py-14 space-y-16">
+    {{-- DATE SECTION --}}
+    <div class="flex justify-end mb-6">
+        <div class="bg-white rounded-xl shadow px-4 py-2 flex items-center gap-2">
+            <span>{{ now()->format('d / m / Y') }}</span>
+            <x-heroicon-o-calendar class="w-5 h-5 text-gray-500"/>
+        </div>
+    </div>
 
-        {{-- DATE --}}
-        <div class="flex justify-end">
-            <input type="date"
-                class="border border-gray-300 rounded-l px-4 py-2 text-sm bg-white shadow-sm focus:ring-2 focus:ring-orange-400 focus:border-orange-400 transition">
+
+    {{-- HERO SECTION --}}
+<div class="bg-white rounded-2xl shadow px-20 py-16 mb-16">
+    <div class="grid md:grid-cols-2 items-center">
+
+        {{-- TEXT (benar-benar ke tengah kanan) --}}
+        <div class="flex justify-center md:justify-end">
+            <div class="max-w-md text-left">
+                <h1 class="text-3xl font-bold mb-4">
+                    Selamat Datang, Admin!!
+                </h1>
+
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Admin bertanggung jawab untuk meninjau dan menyetujui 
+                    pengajuan content creator yang masuk.
+                </p>
+
+                <x-filament::button size="lg">
+                    Pengajuan Content Creator
+                </x-filament::button>
+            </div>
         </div>
 
-        {{-- HERO --}}
-        <div class="bg-white rounded-3xl border border-gray-200 px-12 py-14 shadow-sm">
-
-            <div class="flex items-center justify-between gap-16">
-
-                {{-- LEFT TEXT --}}
-                <div class="flex-1 pl-6">
-
-                    <h2 class="text-2xl font-semibold mb-4">
-                        Selamat Datang, {{ filament()->auth()->user()->name }}!!
-                    </h2>
-
-                    <p class="text-gray-600 text-base mb-8 leading-relaxed max-w-md">
-                        Admin bertanggung jawab untuk meninjau dan menyetujui
-                        pengajuan content creator yang masuk serta memastikan
-                        sistem berjalan dengan aman dan terstruktur.
-                    </p>
-
-                    <x-filament::button
-                        size="md"
-                        class="px-6 py-2 text-sm bg-orange-500 hover:bg-orange-600 transition">
-                        Pengajuan Content Creator
-                    </x-filament::button>
-
-                </div>
-
-                {{-- RIGHT IMAGE --}}
-                <div class="flex-1 flex justify-end">
-                    <img src="{{ asset('images/dashboard-admin.png') }}"
-                        class="max-w-[340px] w-full object-contain">
-                </div>
-
-            </div>
-
+        {{-- IMAGE (custom & responsive) --}}
+        <div class="flex justify-center mt-8 md:mt-0">
+            <img 
+                src="{{ asset('images/dashboard-admin.png') }}" 
+                style="width: 60%; height: auto;"
+                class="object-contain"
+            >
         </div>
 
-        {{-- STATS --}}
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+    </div>
+</div>
 
 
-            {{-- CARD 1 --}}
-            <div class="bg-white border border-gray-200 rounded-3xl px-10 py-12 shadow-sm hover:shadow-md transition">
 
-                <div class="flex items-center gap-3 mb-6">
-                    <x-heroicon-o-user class="w-7 h-7 text-gray-700"/>
-                    <p class="text-base font-medium">Total Akun Pelanggan</p>
-                </div>
 
-                <h2 class="text-4xl font-semibold text-center">60</h2>
-            </div>
+    {{-- STATISTIC CARDS --}}
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
 
-            {{-- CARD 2 --}}
-            <div class="bg-white border border-gray-200 rounded-3xl px-10 py-12 shadow-sm hover:shadow-md transition">
+        <div class="bg-white rounded-2xl shadow p-6 text-center">
+            <x-heroicon-o-user class="w-8 h-8 mx-auto mb-3 text-gray-600"/>
+            <p class="text-gray-600 mb-2">Total Akun Pelanggan</p>
+            <h2 class="text-3xl font-bold">60</h2>
+        </div>
 
-                <div class="flex items-center gap-3 mb-6">
-                    <x-heroicon-o-clipboard-document-list class="w-7 h-7 text-gray-700"/>
-                    <p class="text-base font-medium">Total Misi</p>
-                </div>
+        <div class="bg-white rounded-2xl shadow p-6 text-center">
+            <x-heroicon-o-rectangle-group class="w-8 h-8 mx-auto mb-3 text-gray-600"/>
+            <p class="text-gray-600 mb-2">Total Misi</p>
+            <h2 class="text-3xl font-bold">60</h2>
+        </div>
 
-                <h2 class="text-4xl font-semibold text-center">60</h2>
-            </div>
-
-            {{-- CARD 3 --}}
-            <div class="bg-white border border-gray-200 rounded-3xl px-10 py-12 shadow-sm hover:shadow-md transition">
-
-                <div class="flex items-center gap-3 mb-6">
-                    <x-heroicon-o-ticket class="w-7 h-7 text-gray-700"/>
-                    <p class="text-base font-medium">Total Voucher</p>
-                </div>
-
-                <h2 class="text-4xl font-semibold text-center">60</h2>
-            </div>
-
+        <div class="bg-white rounded-2xl shadow p-6 text-center">
+            <x-heroicon-o-bookmark class="w-8 h-8 mx-auto mb-3 text-gray-600"/>
+            <p class="text-gray-600 mb-2">Total Voucher</p>
+            <h2 class="text-3xl font-bold">60</h2>
         </div>
 
     </div>
