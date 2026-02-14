@@ -57,11 +57,6 @@ class AdminPanelProvider extends PanelProvider
                     ->icon('heroicon-o-tag')
                     ->group('Manajemen User'),
 
-                NavigationItem::make('Content Creator')
-                    ->url('#')
-                    ->icon('heroicon-o-pencil')
-                    ->group('Manajemen User'),
-
                 NavigationItem::make('Misi')
                     ->url('#')
                     ->icon('heroicon-o-flag')
